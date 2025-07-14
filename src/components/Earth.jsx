@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import { useLoader } from '@react-three/fiber'
+import React from 'react'
+import { useLoader, useFrame } from '@react-three/fiber'
 
 export default function Earth() {
   const [
@@ -10,28 +11,32 @@ export default function Earth() {
     cloudmap,
     cloudmaptrans
   ] = useLoader(THREE.TextureLoader, [
-    'src/assets/textures/00_earthmap1k.jpg',
-    'src/assets/textures/01_earthbump1k.jpg',
-    'src/assets/textures/02_earthspec1k.jpg',
-    'src/assets/textures/03_earthlights1k.jpg',
-    'src/assets/textures/04_earthcloudmap.jpg',
-    'src/assets/textures/05_earthcloudmaptrans.jpg'
+    '/textures/00_earthmap1k.jpg',
+    '/textures/01_earthbump1k.jpg',
+    '/textures/02_earthspec1k.jpg',
+    '/textures/03_earthlights1k.jpg',
+    '/textures/04_earthcloudmap.jpg',
+    '/textures/05_earthcloudmaptrans.jpg'
   ])
 
+  const Earth = React.useRef()
+
+  useFrame(() => {
+    Earth.current.rotation.y +=0.001
+  })
 
   return (
-    <group >
+    <group ref={Earth}>
       <mesh >
         <sphereGeometry args={[2, 64, 64]} />
         <meshPhongMaterial
           map={colorMap}
           bumpMap={bumpMap}
-          bumpScale={0.04}
+          bumpScale={0.08}
           specularMap={specularMap}
         />
       </mesh>
 
-      {/* Lights Layer */}
       <mesh>
         <sphereGeometry args={[2.01, 64, 64]} />
         <meshBasicMaterial
@@ -40,19 +45,26 @@ export default function Earth() {
         />
       </mesh>
 
-      {/* Clouds Layer */}
-      <mesh >
-        <sphereGeometry args={[2.01, 64, 64]} />
+      <mesh ref={Clouds}>
+        <sphereGeometry args={[2.03, 64, 64]} />
         <meshBasicMaterial
           map={cloudmap}
           transparent={true}
-          opacity={0.7}
+          opacity={0.8}
           blending={THREE.AdditiveBlending}
           alphaMap={cloudmaptrans}
-
+          depthWrite={false}
         />
       </mesh>
-
+      <mesh>
+        <sphereGeometry args={[2.2, 64, 64]} />
+        <meshBasicMaterial
+          color="#4fc3f7"
+          transparent={true}
+          opacity={0.008}
+          side={THREE.BackSide} // Renderiza solo el interior de la esfera
+        />
+      </mesh>
     </group>
   )
 }
