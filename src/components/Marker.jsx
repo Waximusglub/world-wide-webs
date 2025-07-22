@@ -1,5 +1,8 @@
+import { useState } from "react";
+import cities from "../data/Cities";
+import { Html } from "@react-three/drei";
 
-function cordToVector3(lat, lon, radius=2) {
+function cordToVector3(lat, lon, radius = 2) {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lon + 180) * (Math.PI / 180);
 
@@ -12,12 +15,31 @@ function cordToVector3(lat, lon, radius=2) {
 
 
 export default function Marker({ lat, lon, onClick }) {
+
   const [x, y, z] = cordToVector3(lat, lon);
+  const [hovered, setHovered] = useState(false);
+
 
   return (
-    <mesh position={[x, y, z]} onClick={onClick}>
-      <sphereGeometry args={[0.03, 8, 8]} />
-      <meshStandardMaterial color="red" />
+    <mesh
+      position={[x, y, z]}
+      onClick={onClick}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+      
+    >
+      <sphereGeometry args={[0.14, 12, 12]} />
+      <meshStandardMaterial
+        transparent={false}
+        opacity={0}
+      />
+      {hovered && (
+        <Html>
+          <div>
+            <h1></h1>
+          </div>
+        </Html>
+      )}
     </mesh>
   );
 }

@@ -2,6 +2,11 @@ import * as THREE from 'three'
 import React from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 
+import Marker from './Marker'
+
+import cities from '../data/Cities.js'
+
+
 export default function Earth() {
   const [
     colorMap,
@@ -11,18 +16,23 @@ export default function Earth() {
     cloudmap,
     cloudmaptrans
   ] = useLoader(THREE.TextureLoader, [
-    '/textures/00_earthmap1k.jpg',
-    '/textures/01_earthbump1k.jpg',
-    '/textures/02_earthspec1k.jpg',
-    '/textures/03_earthlights1k.jpg',
-    '/textures/04_earthcloudmap.jpg',
-    '/textures/05_earthcloudmaptrans.jpg'
+    '/src/assets/textures/00_earthmap1k.jpg',
+    '/src/assets/textures/01_earthbump1k.jpg',
+    '/src/assets/textures/02_earthspec1k.jpg',
+    '/src/assets/textures/03_earthlights1k.jpg',
+    '/src/assets/textures/04_earthcloudmap.jpg',
+    '/src/assets/textures/05_earthcloudmaptrans.jpg'
   ])
 
+
+
   const Earth = React.useRef()
+  const Clouds = React.useRef()
 
   useFrame(() => {
-    Earth.current.rotation.y +=0.001
+    Earth.current.rotation.y += 0.001
+    Clouds.current.rotation.y += 0.001
+
   })
 
   return (
@@ -46,11 +56,11 @@ export default function Earth() {
       </mesh>
 
       <mesh ref={Clouds}>
-        <sphereGeometry args={[2.03, 64, 64]} />
+        <sphereGeometry args={[2.05, 64, 64]} />
         <meshBasicMaterial
           map={cloudmap}
           transparent={true}
-          opacity={0.8}
+          opacity={0.55}
           blending={THREE.AdditiveBlending}
           alphaMap={cloudmaptrans}
           depthWrite={false}
@@ -61,10 +71,20 @@ export default function Earth() {
         <meshBasicMaterial
           color="#4fc3f7"
           transparent={true}
-          opacity={0.008}
-          side={THREE.BackSide} // Renderiza solo el interior de la esfera
+          opacity={0.05}
+          side={THREE.BackSide}
         />
       </mesh>
+
+      {cities.map((city) => (
+        <Marker
+          key={city.name}
+          lat={city.lat}
+          lon={city.lon}
+          label={city.name}
+          onClick={() => window.open(city.url, '_blank')}
+        />
+      ))}
     </group>
   )
 }

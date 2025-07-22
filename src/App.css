@@ -4,18 +4,72 @@
   box-sizing: border-box;
 }
 
-.app-container{
+.app-container {
   display: grid;
 }
 
-nav{
+nav {
   display: flex;
   margin: 0.5rem 1rem;
 }
 
 
-nav a{
-
+nav a,
+footer a {
   text-decoration: none;
-  color: white;
+  color: #bebebe;
+}
+
+main {
+  position: relative;
+}
+
+.main-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5.5vw;
+  color: rgba(0, 0, 0, 0.05);
+
+  z-index: 0;
+
+
+  user-select: none;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.main-bg h1{
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+span {
+  color: #bebebe;
+}
+
+canvas{
+  height: 90vh;
+  width: 100vw;
+
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer-center a:hover {
+  color: rgb(80, 140, 252);
+  transition: all 0.2s ease-in-out;
+
 }
