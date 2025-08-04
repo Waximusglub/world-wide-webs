@@ -44,6 +44,7 @@ export default function Earth() {
           bumpMap={bumpMap}
           bumpScale={0.08}
           specularMap={specularMap}
+
         />
       </mesh>
 

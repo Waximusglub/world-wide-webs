@@ -6,7 +6,7 @@ import Earth from './Earth'
 export default function Globe() {
   return (
     <Canvas
-      // style={{ height: '90vh', width: '100vw' }}
+
       camera={{ fov: 75, position: [0, 0, 5] }}
       fallback={null}
       className='canvas'
@@ -15,7 +15,7 @@ export default function Globe() {
 
       <ambientLight intensity={0.1} />
       <directionalLight position={[-2, 0.5, 1.5]} intensity={4.5} />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls enableZoom={false} enablePan={false} />
 
       <Earth />
 
