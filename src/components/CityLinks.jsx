@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import cities from '../data/Cities.js'
+import CityInfo from './CityInfo.jsx'
 
 export default function CityLinks() {
   return (
@@ -11,7 +12,7 @@ export default function CityLinks() {
           </li>
         ) : (
           <li key={city.name}>
-            <a href={city.url} target="_blank" rel="noopener noreferrer">
+            <a href={city.url} target="_blank" onMouseOver={() => CityInfo(city.name)} rel="noopener noreferrer">
               {city.name}
             </a>
           </li>

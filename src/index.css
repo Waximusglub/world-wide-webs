@@ -1,34 +1,121 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: #333;
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
+/* ==================================================
+  Reset y Configuración Base
+================================================== */
+* {
   margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+:root {
+  --base-font-size: 1.00rem;
+  --scale-ratio: 1.25;
+  font-family: arial, sans-serif;
+  background-color: #02000c;
+  color: white;
+
+  /* Heading sizes */
+  --h1-size: 3.05rem;
+  --h1-line-height: 110%;
+  --h1-letter-spacing: -2%;
+  --h2-size: 2.44rem;
+  --h2-line-height: 110%;
+  --h2-letter-spacing: -2%;
+  --h3-size: 1.95rem;
+  --h3-line-height: 130%;
+  --h3-letter-spacing: -1.5%;
+  --h4-size: 1.56rem;
+  --h4-line-height: 130%;
+  --h4-letter-spacing: -1.5%;
+  --h5-size: 1.25rem;
+  --h5-line-height: 150%;
+  --h5-letter-spacing: -0.5%;
+  --h6-size: 1.12rem;
+  --h6-line-height: 150%;
+  --h6-letter-spacing: 0.5%;
+
+  /* Body & Links */
+  --body-lg-size: 1.06rem;
+  --body-lg-line-height: 150%;
+  --body-lg-letter-spacing: 0.5%;
+  --body-size: 1.00rem;
+  --body-line-height: 150%;
+  --body-letter-spacing: 0.5%;
+  --link-size: 0.95rem;
+  --link-line-height: 150%;
+  --link-letter-spacing: 0.5%;
+  --caption-size: 0.89rem;
+  --caption-line-height: 150%;
+  --caption-letter-spacing: 0.5%;
+}
+
+/* ==================================================
+  Tipografías Escaladas
+================================================== */
+.h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-spacing);
+}
+
+.h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  letter-spacing: var(--h2-letter-spacing);
+}
+
+.h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line-height);
+  letter-spacing: var(--h3-letter-spacing);
+}
+
+.h4 {
+  font-size: var(--h4-size);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-spacing);
+}
+
+.h5 {
+  font-size: var(--h5-size);
+  line-height: var(--h5-line-height);
+  letter-spacing: var(--h5-letter-spacing);
+}
+
+.h6 {
+  font-size: var(--h6-size);
+  line-height: var(--h6-line-height);
+  letter-spacing: var(--h6-letter-spacing);
+}
+
+.body-lg {
+  font-size: var(--body-lg-size);
+  line-height: var(--body-lg-line-height);
+  letter-spacing: var(--body-lg-letter-spacing);
+}
+
+.body {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+}
+
+.link {
+  font-size: var(--link-size);
+  line-height: var(--link-line-height);
+  letter-spacing: var(--link-letter-spacing);
+}
+
+.caption {
+  font-size: var(--caption-size);
+  line-height: var(--caption-line-height);
+  letter-spacing: var(--caption-letter-spacing);
+}
+
+/* ==================================================
+   7. Colores y Tipografía General
+================================================== */
+h1,
+span {
+  color: #bebebe;
 }

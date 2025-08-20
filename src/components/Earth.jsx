@@ -68,11 +68,11 @@ export default function Earth() {
         />
       </mesh>
       <mesh>
-        <sphereGeometry args={[2.2, 64, 64]} />
+        <sphereGeometry args={[2.12, 64, 64]} />
         <meshBasicMaterial
           color="#4fc3f7"
           transparent={true}
-          opacity={0.05}
+          opacity={0.1}
           side={THREE.BackSide}
         />
       </mesh>
