@@ -11,7 +11,7 @@
   --base-font-size: 1.00rem;
   --scale-ratio: 1.25;
   font-family: arial, sans-serif;
-  background-color: #02000c;
+  background-color: rgb(246, 247, 255);
   color: white;
 
   /* Heading sizes */

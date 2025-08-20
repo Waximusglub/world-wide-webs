@@ -1,6 +1,4 @@
 import Globe from './components/Globe'
-import CityLinks from './components/CityLinks'
-import CityInfo from './components/CityInfo'
 import './App.css'
 
 export default function App() {
@@ -8,18 +6,19 @@ export default function App() {
   return (
     <div className='app-container'>
       <nav>
-        <a href="/" className='h3' >World Wide Webs</a>
+        <img src="/icon/favicon.svg" alt="icon" />
+        <a href="/" className='' >World Wide Webs</a>
       </nav>
 
       <main>
-        <div className='main-menu'>
-          <CityLinks></CityLinks>
-        </div>
-        <Globe></Globe>
-        <div className='main-info'>
-          <CityInfo></CityInfo>
-        </div>
 
+        <Globe></Globe>
+
+        <div className='main-bg'>
+          <h1 className='bg'>World Wide Webs</h1>
+          <h1 className='bg'>World Wide Webs</h1>
+          <h1 className='bg'>World Wide Webs</h1>
+        </div>
       </main>
 
       <footer>

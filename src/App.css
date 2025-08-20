@@ -11,16 +11,21 @@
   Navegación
 ================================================== */
 nav {
-  height: 5vh;
+  height: 10vh;
   display: flex;
   align-items: center;
-  margin: 0.5rem 3rem;
+  padding: 0.5rem 3rem;
 }
 
 nav a {
   text-decoration: none;
   color: #bebebe;
-  transition: color 0.2s ease-in-out;
+  letter-spacing: -6%;
+  line-height: 90%;
+}
+nav img{
+  width: 3.05rem;
+  height: 3.05rem;
 }
 
 /* ==================================================
@@ -28,34 +33,23 @@ nav a {
 ================================================== */
 main {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
-  height: 100%;
-}
-
-.main-menu {
+  height: 85vh;
   z-index: 10;
-  position: absolute;
-  top: 5%;
-  left: 1%;
-  background: #ffffff15;
-  width: 30%;
-  height: 90%;
 }
 
-.main-menu ul, .main-menu li a {
-  list-style: none;
-  text-decoration: none;
-  color: white;
+.main-bg {
+  position: absolute;
+  z-index: -1;
 }
 
-.main-info {
-  z-index: 10;
-  position: absolute;
-  top: 5%;
-  right: 1%;
-  background: #ffffff15;
-  width: 30%;
-  height: 90%;
+.bg{
+  font-size: 7.44rem;
+  line-height: 110%;
+  letter-spacing: -2%;
 }
 
 /* ==================================================
