@@ -16,12 +16,12 @@ export default function Earth() {
     cloudmap,
     cloudmaptrans
   ] = useLoader(THREE.TextureLoader, [
-    '../assets/textures/00_earthmap1k.jpg',
-    '../assets/textures/01_earthbump1k.jpg',
-    '../assets/textures/02_earthspec1k.jpg',
-    '../assets/textures/03_earthlights1k.jpg',
-    '../assets/textures/04_earthcloudmap.jpg',
-    '../assets/textures/05_earthcloudmaptrans.jpg'
+    '/textures/00_earthmap1k.jpg',
+    '/textures/01_earthbump1k.jpg',
+    '/textures/02_earthspec1k.jpg',
+    '/textures/03_earthlights1k.jpg',
+    '/textures/04_earthcloudmap.jpg',
+    '/textures/05_earthcloudmaptrans.jpg'
   ])
 
 
